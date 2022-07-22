@@ -49,11 +49,11 @@ if os.getenv("PYTHON_ENV") == "dev":
 
 # Use GCP secret manager in prod mode
 elif os.getenv("GOOGLE_CLOUD_PROJECT", None):
-    project_id = "1033113497693"
+    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
 
     client = secretmanager.SecretManagerServiceClient()
-    settings_name = os.getenv("SETTINGS_NAME", "django-settings")
-    name = f"projects/{project_id}/secrets/{settings_name}/versions/1"
+    #settings_name = os.getenv("SETTINGS_NAME", "django-settings")
+    name = f"projects/{project_id}/secrets/django-settings/versions/latest"
     payload = client.access_secret_version(name=name).payload.data.decode(
         "UTF-8"
     )
