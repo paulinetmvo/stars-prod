@@ -21,4 +21,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Gunicorn as app server
-CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 stars.stars.wsgi:application
+CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 stars.wsgi:application
