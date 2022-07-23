@@ -173,7 +173,7 @@ GS_BUCKET_NAME = env("GS_BUCKET_NAME")
 STATIC_URL = "/static/"
 DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-#GS_DEFAULT_ACL = "publicRead"
+GS_DEFAULT_ACL = "publicRead"
 
 LOGIN_REDIRECT_URL = '/nutzer/'
 LOGOUT_REDIRECT_URL = '/logout/'
