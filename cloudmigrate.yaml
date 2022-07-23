@@ -58,9 +58,9 @@ steps:
       ]
 
 substitutions:
-  _INSTANCE_NAME: django-instance
-  _REGION: us-central1
-  _SERVICE_NAME: polls-service
+  _INSTANCE_NAME: stars-instance
+  _REGION: europe-west1
+  _SERVICE_NAME: stars-service
   _SECRET_SETTINGS_NAME: django-settings
 
 images:
