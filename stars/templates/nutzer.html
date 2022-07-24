@@ -26,7 +26,7 @@ box-shadow: 2px  1px  20px 5px #BC6C25;
         </div>
         <div class="aligncenter pt-5">
             {% if request.user.profile_user.avatar %}
-                <img src="{{request.user.profile_user.avatar.url}}" class="rounded-circle">
+                <img src="https://cdn.pixabay.com/photo/2017/10/07/07/27/thumbs-up-2825687_960_720.jpg" class="rounded-circle">
             {% else %}
                 <img src="{% static 'images/anonymous.jpg' %}" class="rounded-circle">
             {% endif %}
