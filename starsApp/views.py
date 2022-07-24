@@ -118,21 +118,21 @@ def timeslots(request, wp_id):
 def reserve(request, time_slot, wp_id, datum):
     wp1 = Workplace.objects.get(id=wp_id)
     res1 = wp1.reservation_set.create(user=request.user, date=datum, time=time_slot)
-    name = request.user.first_name
-    subject = 'Bestätigung deiner Rservierung'
-    msg = render_to_string('email_support.html', {'name': name , 'wp_nummer': wp1.nummer, 'raum_nummer': wp1.raum, 'datum': res1.date, 'wp':wp1, 'timeslote': get_timeslot(res1.time) }) 
-    plain_msg = msg.replace("\r\n", "<br>")
-    plain_msg = strip_tags(msg)
-    msg_object = EmailMessage (
-        subject = subject,
-        body = plain_msg,
-        from_email = "Stars <stars@example.com>",
-        to = [request.user.email]
-    )
-    file = open("stars-logo-01.png", "rb")
-    msg_object.attach('stars-logo-01.png', file.read(), 'image/png')
-    #msg_object.send()
-    messages.info(request, ("Vielen Dank, wir haben dir eine Bestätigungsemail für deine Reservierung geschickt."))
+    #name = request.user.first_name
+    #subject = 'Bestätigung deiner Rservierung'
+    #msg = render_to_string('email_support.html', {'name': name , 'wp_nummer': wp1.nummer, 'raum_nummer': wp1.raum, 'datum': res1.date, 'wp':wp1, 'timeslote': get_timeslot(res1.time) }) 
+    #plain_msg = msg.replace("\r\n", "<br>")
+    #plain_msg = strip_tags(msg)
+    #msg_object = EmailMessage (
+    #    subject = subject,
+    #    body = plain_msg,
+    #    from_email = "Stars <stars@example.com>",
+    #    to = [request.user.email]
+    #)
+    #file = open("stars-logo-01.png", "rb")
+    #msg_object.attach('stars-logo-01.png', file.read(), 'image/png')
+    ##msg_object.send()
+    #messages.info(request, ("Vielen Dank, wir haben dir eine Bestätigungsemail für deine Reservierung geschickt."))
     return redirect('reservations')
 
 
