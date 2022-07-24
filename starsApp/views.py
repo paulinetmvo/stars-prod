@@ -131,7 +131,7 @@ def reserve(request, time_slot, wp_id, datum):
     )
     file = open("stars-logo-01.png", "rb")
     msg_object.attach('stars-logo-01.png', file.read(), 'image/png')
-    msg_object.send()
+    #msg_object.send()
     messages.info(request, ("Vielen Dank, wir haben dir eine Bestätigungsemail für deine Reservierung geschickt."))
     return redirect('reservations')
 
