@@ -175,8 +175,8 @@ DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 GS_DEFAULT_ACL = "publicRead"
 
-LOGIN_REDIRECT_URL = '/nutzer/'
-LOGOUT_REDIRECT_URL = '/logout/'
+#LOGIN_REDIRECT_URL = '/nutzer/'
+#LOGOUT_REDIRECT_URL = '/logout/'
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = 'https://storage.googleapis.com/starsbucket/images'
