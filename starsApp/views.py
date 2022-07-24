@@ -5,12 +5,12 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, Http404, JsonResponse, HttpResponse
 from django.forms.models import model_to_dict
-from .forms import UserForm, ProfileForm, PasswordForm, LoginForm, ContactForm
+from .forms import DateWorkplaceForm, UserForm, ProfileForm, PasswordForm, LoginForm, ContactForm
 from .models import Reservation, Workplace, Unit, Room, Review, ProfileUser
 from django.http import HttpResponse, Http404, JsonResponse
 from django.forms.models import model_to_dict
 from django.template.loader import render_to_string
-from .forms import UserForm, ProfileForm, PasswordForm, LoginForm, ContactForm, DateForm
+from .forms import UserForm, ProfileForm, PasswordForm, LoginForm, ContactForm, DateForm, DateWorkplaceForm
 from .models import Reservation, Workplace, Unit, Room, WorkplaceDevice
 from django.conf import settings
 from django.contrib import messages
@@ -52,10 +52,29 @@ def reservations(request):
             13: '20:00-21:00',
             14: '21:00-22:00'
         }
+
+        date_workplace_form = DateWorkplaceForm()
+        user_reservation = Reservation.objects.filter(user=request.user)
+
+        if request.GET:
+            if request.GET['wp'] and request.GET['date']:
+                selected_wp = request.GET['wp']
+                selected_date = request.GET['date']
+                date_split = selected_date.split("-")
+                selected_date = datetime.date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+                user_reservation = Reservation.objects.filter(user=request.user, date=selected_date, wp=selected_wp)
+            elif request.GET['wp']:
+                selected_wp = request.GET['wp']
+                user_reservation = Reservation.objects.filter(user=request.user, wp=selected_wp)
+            elif request.GET['date']:
+                selected_date = request.GET['date']
+                date_split = selected_date.split("-")
+                selected_date = datetime.date(int(date_split[0]), int(date_split[1]), int(date_split[2]))
+                user_reservation = Reservation.objects.filter(user=request.user, date=selected_date)
+
         workplace = Workplace.objects.all()
-        user_reservation = Reservation.objects.all().filter(user=request.user)
         return render(request, 'reservierungen.html', {'reservations': user_reservation, 'workplaces': workplace,
-                                                       'slots': slots})
+                                                       'slots': slots, 'date_workplace_form': DateWorkplaceForm()})
     else:
         return render(request, 'reservierungen.html')
 

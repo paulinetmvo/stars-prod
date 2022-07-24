@@ -175,11 +175,13 @@ DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 GS_DEFAULT_ACL = "publicRead"
 
-#LOGIN_REDIRECT_URL = '/nutzer/'
-#LOGOUT_REDIRECT_URL = '/logout/'
+LOGIN_REDIRECT_URL = '/nutzer/'
+LOGOUT_REDIRECT_URL = '/logout/'
 
 MEDIA_URL = '/images/'
 MEDIA_ROOT = 'https://storage.googleapis.com/starsbucket/images'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'starsApp/static/images')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -193,4 +195,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-RECIPIENT_ADDRESS = env('EMAIL_HOST_USER')
+#RECIPIENT_ADDRESS = env('EMAIL_HOST_USER')
