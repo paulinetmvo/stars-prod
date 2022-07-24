@@ -178,6 +178,9 @@ GS_DEFAULT_ACL = "publicRead"
 LOGIN_REDIRECT_URL = '/nutzer/'
 LOGOUT_REDIRECT_URL = '/logout/'
 
+MEDIA_URL = '/images/'
+MEDIA_ROOT = 'https://storage.googleapis.com/starsbucket/images'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
