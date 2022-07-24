@@ -129,7 +129,7 @@ def reserve(request, time_slot, wp_id, datum):
         from_email = "Stars <stars@example.com>",
         to = [request.user.email]
     )
-    file = open("stars-logo-01.png", "rb")
+    file = open("https://storage.googleapis.com/starsbucket/images/stars-logo-01.png", "rb")
     msg_object.attach('https://storage.googleapis.com/starsbucket/images/stars-logo-01.png', file.read(), 'image/png')
     msg_object.send()
     messages.info(request, ("Vielen Dank, wir haben dir eine Bestätigungsemail für deine Reservierung geschickt."))
