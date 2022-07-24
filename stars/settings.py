@@ -170,7 +170,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 GS_BUCKET_NAME = env("GS_BUCKET_NAME")
-STATIC_URL = "/static/"
+STATIC_URL = 'https://storage.googleapis.com/starsbucket/'
 DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 STATICFILES_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
 GS_DEFAULT_ACL = "publicRead"

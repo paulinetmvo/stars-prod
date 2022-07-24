@@ -94,18 +94,18 @@ a:hover {
     height: 80vh;
     width: 100%;
     position: relative;
-    background-image: url('/static/images/home-1.jpeg');
+    background-image: url('https://storage.googleapis.com/starsbucket/images/home-1.jpeg');
 }
 
 .cover-imp {
     background-size: cover;
-    align-self:flex-end;
+    align-self: flex-end;
     background-position: center¸;
     top: 0;
     height: 90vh;
     width: 60%;
     position: relative;
-    background-image: url('/static/images/impressum.jpg');
+    background-image: url('https://storage.googleapis.com/starsbucket/images/impressum.jpg');
 }
 
 .background-cover {
