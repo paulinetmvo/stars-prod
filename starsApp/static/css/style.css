@@ -5,12 +5,12 @@
 
 @font-face {
     font-family: 'Pensum';
-    src: url("/static/fonts/PensumDisplay-Black.otf");
+    src: url("https://storage.googleapis.com/starsbucket/fonts/PensumDisplay-Black.otf");
 }
 
 @font-face {
     font-family: 'Questrial';
-    src: url("/static/fonts/Questrial-Regular.ttf");
+    src: url("https://storage.googleapis.com/starsbucket/fonts/Questrial-Regular.ttf");
 }
 
 .f1 {
@@ -94,7 +94,7 @@ a:hover {
     height: 80vh;
     width: 100%;
     position: relative;
-    background-image: url('https://storage.googleapis.com/starsbucket/images/home-1.jpeg');
+    background-image: url('https://storage.googleapis.com/starsbucket/images/home-1.JPEG');
 }
 
 .cover-imp {
