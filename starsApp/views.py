@@ -314,7 +314,7 @@ def rating(request, wp_id):
             messages.info(request, f'Du kannst deinen reservierten Arbeitsplatz aktuell nicht bewerten, denn das Ende deiner Reservierung am {first_reservation.date} um {reservation_end(time = first_reservation.time)}:00 Uhr ist noch nicht eingetroffen.')
             return HttpResponseRedirect(reverse('wp-rate', args = [workplace.id]))
        
-     #   Review(user = user, wp = workplace, text = comment, rate = rate).save()
+        Review(user = user, wp = workplace, text = comment, rate = rate).save()
         messages.success(request, ("Vielen Dank für dein Feedback!"))
         return HttpResponseRedirect(reverse('wp-rate', args = [wp_id]))         
 
